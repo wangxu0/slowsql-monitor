@@ -31,7 +31,6 @@ else:
     print("monitor.conf is illegal")
 
 os.system("bash mysql -h " + host + " -P " + port + " -u " + user + " -p " + password + " -e 'source common.sql'")
-parser.set("path", "slow_query_log_file", logFilePath)
 
 
 

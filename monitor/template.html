@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+
+    <style type="text/css">
+        #table-3 thead, #table-3 tr {
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(235, 242, 224);
+        }
+        #table-3 {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(235, 242, 224);
+        }
+
+        /* Padding and font style */
+        #table-3 td, #table-3 th {
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: Verdana;
+        color: rgb(149, 170, 109);
+        }
+
+        /* Alternating background colors */
+        #table-3 tr:nth-child(even) {
+        background: rgb(230, 238, 214)
+        }
+        #table-3 tr:nth-child(odd) {
+        background: #FFF
+        }
+
+    </style>
+
+</head>
+<body>
+
+<table id="table-3" align="center">
+    <caption>Top TEMP_VAR{TOP_N} Slow SQL</caption>
+    <thead>
+    <th>Count</th>
+    <th>Lock</th>
+    <th>Time</th>
+    <th>Session</th>
+    <th>SQL</th>
+    </thead>
+    <tbody>TEMP_VAR{ITEMS}</tbody>
+</table>
+
+</body>
+</html>
