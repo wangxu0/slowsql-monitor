@@ -1,8 +1,10 @@
 import ConfigParser
+import email_sender
 
 parser = ConfigParser.ConfigParser()
 parser.read("../monitor.conf")
 log_file_path = parser.get("config", "log_file_path")
+email_list = parser.get("config", "email_list")
 
 f = open(log_file_path, "r")
 file_content = f.read()
@@ -48,8 +50,8 @@ for one_content in file_content_split:
     for j in range(1, len(data_split)):
         sql = sql + data_split[j].strip()
     item_dict['SQL'] = sql
+    msg_list.append(item_dict)
 
-    print(item_dict)
-    print("--------------------------")
+email_sender.send_email(email_list.split(","), "The slow sql report for your MySQL", msg_list)
 
 
