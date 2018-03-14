@@ -19,7 +19,7 @@ def _format_addr(s):
 
 def send_email(email_list, subject, content_list):
     msg = MIMEText(content_formartter.formart_content(content_list), 'html', 'utf-8')
-    msg['From'] = _format_addr(u'MySQL Slow SQL Monitor <%s>' % from_addr)
+    msg['From'] = _format_addr(u'MySQL Slow SQL Monitor <%s>' % addr)
     msg['To'] = _format_addr(u'管理员 <%s>' % email_list[0])
     msg['Subject'] = Header(subject, 'utf-8').encode()
 

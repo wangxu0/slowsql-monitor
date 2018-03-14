@@ -1,4 +1,5 @@
 import ConfigParser
+import os
 import email_sender
 
 parser = ConfigParser.ConfigParser()
@@ -54,4 +55,5 @@ for one_content in file_content_split:
 
 email_sender.send_email(email_list.split(","), "The slow sql report for your MySQL", msg_list)
 
+os.remove(log_file_path)
 
