@@ -1,5 +1,5 @@
 
-def formart_content(content_list):
+def format_content(content_list):
     top_n = len(content_list)
     t_body = ""
     for content_items in content_list:

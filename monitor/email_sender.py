@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import content_formartter
+import content_formatter
 import ConfigParser
 import smtplib
 from email.header import Header
@@ -22,7 +22,7 @@ def _format_addr(s):
 
 
 def send_email(email_list, subject, content_list):
-    msg = MIMEText(content_formartter.formart_content(content_list), 'html', 'utf-8')
+    msg = MIMEText(content_formatter.format_content(content_list), 'html', 'utf-8')
     msg['From'] = _format_addr(u'MySQL Slow SQL Monitor <%s>' % addr)
     msg['To'] = _format_addr(u'Administrator <%s>' % email_list[0])
     msg['Subject'] = Header(subject, 'utf-8').encode()

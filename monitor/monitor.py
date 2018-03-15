@@ -4,10 +4,17 @@ import email_sender
 
 parser = ConfigParser.ConfigParser()
 parser.read("../monitor.conf")
+mysql_home = parser.get("config", "mysql_home")
 log_file_path = parser.get("config", "log_file_path")
 email_list = parser.get("config", "email_list")
+temp_file_path = "temp_file.log"
 
-f = open(log_file_path, "r")
+#mysqldumpslow
+cmd = mysql_home + "/mysqldumpslow -s t -t 100 " + log_file_path + " > " + temp_file_path
+os.system(cmd)
+
+
+f = open(temp_file_path, "r")
 file_content = f.read()
 f.close()
 
@@ -62,5 +69,5 @@ for one_content in file_content_split:
 
 email_sender.send_email(email_list.split(","), "The slow sql report for your MySQL", msg_list)
 
-os.remove(log_file_path)
+os.remove(temp_file_path)
 
