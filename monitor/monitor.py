@@ -53,6 +53,13 @@ for one_content in file_content_split:
     item_dict['SQL'] = sql
     msg_list.append(item_dict)
 
+# already done
+# def msg_cmp(x, y):
+#     return float(y['Time'].split('s')[0])-float(x['Time'].split('s')[0])
+#
+#
+# msg_list.sort(msg_cmp)
+
 email_sender.send_email(email_list.split(","), "The slow sql report for your MySQL", msg_list)
 
 os.remove(log_file_path)
