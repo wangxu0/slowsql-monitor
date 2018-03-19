@@ -49,6 +49,4 @@ Now you can execute some SQL in MySQL to detect if slow query monitoring and rep
 
 This is a sample test:
 
-<div style="align: center">
 ![Test](https://github.com/wxisme/slowsql-monitor/blob/master/static/test.png)
-</div>
