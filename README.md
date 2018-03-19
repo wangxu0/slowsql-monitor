@@ -29,11 +29,11 @@ If you want a simpler configuration, you can execute `config.sql` directly on th
 
 Some configuration in `monitor.conf`:
 Config the mysql_home,if you don't know that you can query with this sql:
-```mysql
+```sql
 select @@basedir as basePath from dual;
 ```
 Config the log_file_path,if you don't know that you can query with this sql:
-```mysql
+```sql
 show variables like 'slow_query_log_file';
 ```
 Of course, you can also modify this path, as long as you ensure the same configuration in MySQL and `monitor.conf`.
@@ -46,4 +46,6 @@ You can execute the setup.sh script directly to set up scheduled analysis tasks.
 bash setup.sh
 ```
 Now you can execute some SQL in MySQL to detect if slow query monitoring and report analysis tasks work. If everything is ready you will receive an email with an analysis report.
+This is a sample test:
 
+![Test](https://github.com/wxisme/slowsql-monitor/blob/master/static/test.png)
