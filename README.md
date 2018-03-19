@@ -40,3 +40,10 @@ Of course, you can also modify this path, as long as you ensure the same configu
 
 Finally, you need to fill in the mailing list and mail server information to `monitor.conf` for receiving SQL analysis reports.
 
+### Setup & Test
+You can execute the setup.sh script directly to set up scheduled analysis tasks. The default frequency is once per week. You can also set the frequency you need by modifying the crontab expression.
+```bash
+bash setup.sh
+```
+Now you can execute some SQL in MySQL to detect if slow query monitoring and report analysis tasks work. If everything is ready you will receive an email with an analysis report.
+
